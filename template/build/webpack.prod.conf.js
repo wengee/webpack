@@ -8,6 +8,12 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+{{#oss}}
+var AliyunOSSPlugin = require('aliyunoss-webpack-plugin')
+{{/oss}}
+{{#remote}}
+var HttpPushWebpackPlugin = require('http-push-webpack-plugin')
+{{/remote}}
 
 var env = {{#if_or unit e2e}}process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -120,5 +126,45 @@ if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
+
+{{#oss}}
+if (config.build.aliyunOss) {
+  var assetsSubDirectory = path.resolve(config.build.assetsRoot, config.build.assetsSubDirectory)
+  webpackConfig.plugins.push(new AliyunOSSPlugin({
+    buildPath: path.resolve(assetsSubDirectory, '**'),
+    region: config.build.aliyunOss.region,
+    accessKeyId: config.build.aliyunOss.accessKeyId,
+    accessKeySecret: config.build.aliyunOss.accessKeySecret,
+    bucket: config.build.aliyunOss.bucket,
+    internal: config.build.aliyunOss.internal,
+    generateObjectPath: function (filename, file) {
+      var pathName = path.relative(assetsSubDirectory, file)
+      if (config.build.aliyunOss.prefix) {
+        return config.build.aliyunOss.prefix + pathName
+      }
+
+      return pathName
+    }
+  }))
+
+  if (config.build.aliyunOss.publicPath) {
+    webpackConfig.output.publicPath = config.build.aliyunOss.publicPath
+  }
+}
+{{/oss}}
+
+{{#remote}}
+if (config.build.remote) {
+  webpackConfig.plugins.push(new HttpPushWebpackPlugin({
+    receiver: config.build.remote.receiver,
+    to: config.build.remote.to,
+    token: config.build.remote.token
+  }))
+
+  if (config.build.remote.publicPath) {
+    webpackConfig.output.publicPath = config.build.remote.publicPath
+  }
+}
+{{/remote}}
 
 module.exports = webpackConfig

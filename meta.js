@@ -29,20 +29,24 @@ module.exports = {
       "message": "Vue build",
       "choices": [
         {
-          "name": "Runtime + Compiler: recommended for most users",
-          "value": "standalone",
-          "short": "standalone"
-        },
-        {
           "name": "Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere",
           "value": "runtime",
           "short": "runtime"
+        },
+        {
+          "name": "Runtime + Compiler: recommended for most users",
+          "value": "standalone",
+          "short": "standalone"
         }
       ]
     },
     "router": {
       "type": "confirm",
       "message": "Install vue-router?"
+    },
+    "vuex": {
+      "type": "confirm",
+      "message": "Install vuex?"
     },
     "lint": {
       "type": "confirm",
@@ -54,14 +58,14 @@ module.exports = {
       "message": "Pick an ESLint preset",
       "choices": [
         {
-          "name": "Standard (https://github.com/feross/standard)",
-          "value": "standard",
-          "short": "Standard"
-        },
-        {
           "name": "Airbnb (https://github.com/airbnb/javascript)",
           "value": "airbnb",
           "short": "Airbnb"
+        },
+        {
+          "name": "Standard (https://github.com/feross/standard)",
+          "value": "standard",
+          "short": "Standard"
         },
         {
           "name": "none (configure it yourself)",
@@ -76,7 +80,17 @@ module.exports = {
     },
     "e2e": {
       "type": "confirm",
-      "message": "Setup e2e tests with Nightwatch?"
+      "message": "Setup e2e tests with Nightwatch?",
+      "default": false
+    },
+    "oss": {
+      "type": "confirm",
+      "message": "Upload the static files to alioss?",
+      "default": false
+    },
+    "remote": {
+      "type": "confirm",
+      "message": "Upload the static files to the remote server?"
     }
   },
   "filters": {
@@ -86,7 +100,8 @@ module.exports = {
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
-    "src/router/**/*": "router"
+    "src/router/**/*": "router",
+    "src/store/**/*": "vuex"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
