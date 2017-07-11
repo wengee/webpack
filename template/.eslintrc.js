@@ -37,6 +37,7 @@ module.exports = {
     'arrow-parens': 0,
     // allow async-await
     'generator-star-spacing': 0,
+    'comma-dangle': ['error', 'always-multiline'],
     {{/if_eq}}
     {{#if_eq lintConfig "airbnb"}}
     'global-require': 0,

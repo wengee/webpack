@@ -12,7 +12,7 @@ const store = new Vuex.Store({
   actions,
   getters,
   mutations,
-  state{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  state,
 }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default store{{#if_eq lintConfig "airbnb"}};{{/if_eq}}

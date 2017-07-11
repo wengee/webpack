@@ -32,13 +32,13 @@ const router = new VueRouter({
       name: 'index',
       component: require('@/views/index'),
       children: [
-      ]{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+      ],
     },
     {
       path: '*',
-      redirect: '/'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  ]{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+      redirect: '/',
+    },
+  ],
 }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default router{{#if_eq lintConfig "airbnb"}};{{/if_eq}}

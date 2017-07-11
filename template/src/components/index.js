@@ -6,5 +6,5 @@ export default {
     components.forEach({{#if_eq lintConfig "airbnb"}}({{/if_eq}}component{{#if_eq lintConfig "airbnb"}}){{/if_eq}} => {
       Vue.component(component.name, component){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
     }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  },
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
