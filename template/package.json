@@ -82,6 +82,15 @@
     "nightwatch": "^0.9.12",
     "selenium-server": "^3.0.1",
     {{/e2e}}
+    {{#oss}}
+    "aliyunoss-webpack-plugin": "^0.2.1",
+    {{/oss}}
+    {{#remote}}
+    "http-push-webpack-plugin": "^1.0.2",
+    {{/remote}}
+    {{#vuex}}
+    "vuex": "^3.0.1",
+    {{/vuex}}
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -120,16 +129,7 @@
     "webpack": "^3.11.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.11.2",
-    "webpack-merge": "^4.1.0",
-    {{#oss}}
-    "aliyunoss-webpack-plugin": "^0.2.1",
-    {{/oss}}
-    {{#remote}}
-    "http-push-webpack-plugin": "^1.0.2",
-    {{/remote}}
-    {{#vuex}}
-    "vuex": "^3.0.1",
-    {{/vuex}}
+    "webpack-merge": "^4.1.0"
   },
   "engines": {
     "node": ">= 6.0.0",
