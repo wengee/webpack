@@ -1,5 +1,6 @@
 import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import VueRouter from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import IndexView from '@/views/index'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 Vue.use(VueRouter){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
@@ -30,7 +31,7 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'index',
-      component: require('@/views/index'),
+      component: IndexView,
       children: [
       ],
     },
