@@ -1,5 +1,5 @@
-import axios from 'axios'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import axios from 'axios'
 
-const instance = axios.create(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+const instance = axios.create()
 
-export default instance{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+export default instance

@@ -125,8 +125,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*'],
       },
-    ])
-  ]
+    ]),
+  ],
 })
 
 if (config.build.productionGzip) {
@@ -151,7 +151,6 @@ if (config.build.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
-
 {{#oss}}
 if (config.build.aliyunOss) {
   var assetsSubDirectory = path.resolve(config.build.assetsRoot, config.build.assetsSubDirectory)
@@ -169,7 +168,7 @@ if (config.build.aliyunOss) {
       }
 
       return pathName
-    }
+    },
   }))
 
   if (config.build.aliyunOss.publicPath) {
@@ -177,13 +176,12 @@ if (config.build.aliyunOss) {
   }
 }
 {{/oss}}
-
 {{#remote}}
 if (config.build.remote) {
   webpackConfig.plugins.push(new HttpPushWebpackPlugin({
     receiver: config.build.remote.receiver,
     to: config.build.remote.to,
-    token: config.build.remote.token
+    token: config.build.remote.token,
   }))
 
   if (config.build.remote.publicPath) {

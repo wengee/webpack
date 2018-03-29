@@ -1,11 +1,11 @@
-import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import actions from './actions'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import getters from './getters'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import mutations from './mutations'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import state from './state'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from 'vue'
+import Vuex from 'vuex'
+import actions from './actions'
+import getters from './getters'
+import mutations from './mutations'
+import state from './state'
 
-Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(Vuex)
 
 const store = new Vuex.Store({
   strict: true,
@@ -13,6 +13,6 @@ const store = new Vuex.Store({
   getters,
   mutations,
   state,
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+})
 
-export default store{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+export default store

@@ -23,7 +23,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/test.env'),
     }),
-  ]
+  ],
 })
 
 // no need for app entry during tests

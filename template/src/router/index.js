@@ -1,23 +1,23 @@
-import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import VueRouter from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import IndexView from '@/views/index'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import IndexView from '@/views/index'
 
-Vue.use(VueRouter){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(VueRouter)
 
 /*
 function createRouteConfig{{#if_eq lintConfig "standard"}} {{/if_eq}}(path, view, options = {}) {
   if (typeof view === 'object') {
-    options = view{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-    view = null{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    options = view
+    view = null
   }
 
-  view = view || path{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  options.path = `/${path}`{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  options.name = options.name || path.replace(/\//g, '-'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  options.meta = options.meta || {}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  options.meta.nav = options.meta.nav || options.nav || options.name{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  options.component = () => import(`@/views/${view}.vue`){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  return options{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  view = view || path
+  options.path = `/${path}`
+  options.name = options.name || path.replace(/\//g, '-')
+  options.meta = options.meta || {}
+  options.meta.nav = options.meta.nav || options.nav || options.name
+  options.component = () => import(`@/views/${view}.vue`)
+  return options
 }
 */
 
@@ -35,6 +35,6 @@ const router = new VueRouter({
       redirect: '/',
     },
   ],
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+})
 
-export default router{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+export default router
