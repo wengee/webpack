@@ -16,12 +16,7 @@ function createRouteConfig{{#if_eq lintConfig "standard"}} {{/if_eq}}(path, view
   options.name = options.name || path.replace(/\//g, '-'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   options.meta = options.meta || {}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   options.meta.nav = options.meta.nav || options.nav || options.name{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  // options.component = {{#if_eq lintConfig "airbnb"}}({{/if_eq}}resolve{{#if_eq lintConfig "airbnb"}}){{/if_eq}} => {
-  //   const handler = require(`bundle-loader!babel-loader!../views/${view}.vue`){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  //   handler(module => resolve(module)){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  // }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-  options.component = require(`@/views/${view}`){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
+  options.component = () => import(`@/views/${view}.vue`){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   return options{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 }
 */

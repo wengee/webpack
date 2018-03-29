@@ -5,7 +5,7 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --disable-host-check --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     {{#if_eq runner "jest"}}
     "unit": "jest --config test/unit/jest.conf.js --coverage",
@@ -92,6 +92,7 @@
     "vuex": "^3.0.1",
     {{/vuex}}
     "autoprefixer": "^8.2.0",
+    "axios": "^0.18.0",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
@@ -121,6 +122,7 @@
     "semver": "^5.3.0",
     "shelljs": "^0.8.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
+    "underscore": "^1.8.3",
     "url-loader": "^1.0.1",
     "vue-axios": "^2.1.0",
     "vue-loader": "^14.2.2",
