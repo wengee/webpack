@@ -1,0 +1,67 @@
+.bul-table {
+  position: relative;
+
+  .header-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 43px;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  table {
+    margin-bottom: 0;
+  }
+
+  thead th {
+    background-color: $white-ter;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding-top: 0.85em;
+    padding-bottom: 0.85em;
+    vertical-align: middle;
+
+    &.has-text-left {
+      text-align: left;
+    }
+
+    &.has-text-right {
+      text-align: right;
+    }
+
+    &.has-text-centered {
+      text-align: center;
+    }
+
+    .fa {
+      font-size: 18px;
+    }
+  }
+
+  .loading, .no-data {
+    background-color: $white-bis;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .no-data {
+    color: $grey-light;
+  }
+
+  .loading {
+    line-height: 24px;
+    vertical-align: baseline;
+
+    .fa {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 20px;
+      transform-origin: 12px 12px;
+      margin-right: 8px;
+    }
+  }
+}

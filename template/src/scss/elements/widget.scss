@@ -1,0 +1,99 @@
+.widget {
+  border-radius: $radius;
+  border: 1px solid $grey-light;
+
+  .widget-hd {
+    line-height: 41px;
+    height: 41px;
+    padding: 0 15px;
+    background-color: $grey-light;
+    color: findColorInvert($grey-light);
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    margin: 0 !important;
+  }
+
+  .widget-bd {
+    background-color: lighten($grey-light, 50%);
+    padding: 15px;
+    border-radius: $radius;
+  }
+
+  &.is-black {
+    border-color: $black-ter;
+
+    .widget-hd {
+      background-color: $black-ter;
+      color: findColorInvert($black-ter);
+    }
+
+    .widget-bd {
+      background-color: lighten($black-ter, 75%);
+    }
+  }
+
+  &.is-primary {
+    border-color: $primary;
+
+    .widget-hd {
+      background-color: $primary;
+      color: findColorInvert($primary);
+    }
+
+    .widget-bd {
+      background-color: lighten($primary, 50%);
+    }
+  }
+
+  &.is-info {
+    border-color: $info;
+
+    .widget-hd {
+      background-color: $info;
+      color: findColorInvert($info);
+    }
+
+    .widget-bd {
+      background-color: lighten($info, 50%);
+    }
+  }
+
+  &.is-success {
+    border-color: $success;
+
+    .widget-hd {
+      background-color: $success;
+      color: findColorInvert($success);
+    }
+
+    .widget-bd {
+      background-color: lighten($success, 35%);
+    }
+  }
+
+  &.is-warning {
+    border-color: $warning;
+
+    .widget-hd {
+      background-color: $warning;
+      color: findColorInvert($warning);
+    }
+
+    .widget-bd {
+      background-color: lighten($warning, 40%);
+    }
+  }
+
+  &.is-danger {
+    border-color: $danger;
+
+    .widget-hd {
+      background-color: $danger;
+      color: findColorInvert($danger);
+    }
+
+    .widget-bd {
+      background-color: lighten($danger, 30%);
+    }
+  }
+}

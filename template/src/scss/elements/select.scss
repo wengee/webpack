@@ -1,0 +1,27 @@
+.select {
+  select {
+    padding-right: 2.5em;
+
+    option {
+      color: $grey-dark;
+      padding: 0.25em 0.5em;
+    }
+
+    option:disabled {
+      cursor: not-allowed;
+      color: lighten($grey, 12%);
+    }
+
+    optgroup {
+      color: $grey-light;
+      font-weight: $weight-normal;
+      font-style: normal;
+      cursor: default;
+      padding: 0.5em 0.25em;
+    }
+  }
+
+  &.is-empty select {
+    color: lighten($grey, 12%);
+  }
+}

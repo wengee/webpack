@@ -1,0 +1,65 @@
+.uploader {
+  position: relative;
+  overflow: hidden;
+
+  .preview, .default-image {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .default-image {
+    background: #f4f4f4;
+  }
+
+  .columns {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .column {
+      align-self: center;
+      text-align: center;
+      color: findColorInvert($primary);
+
+      &:hover {
+        color: lighten($primary, 40%);
+      }
+
+      .fa {
+        font-size: 36px;
+        padding: 20px 0;
+      }
+    }
+  }
+
+  .btn-upload {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+
+    form, input {
+      cursor: pointer;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

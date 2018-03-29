@@ -1,0 +1,22 @@
+.data-list {
+  margin: 0 -8px;
+
+  .no-data {
+    background: $white-ter;
+    border-radius: $radius;
+    margin: 0 8px;
+    padding: 25px;
+    color: $grey;
+    text-align: center;
+  }
+
+  .data-item {
+    float: left;
+    width: 20%;
+    padding: 15px 8px 0;
+
+    &.row-1 {
+      padding-top: 0;
+    }
+  }
+}

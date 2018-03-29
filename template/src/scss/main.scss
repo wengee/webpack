@@ -1,0 +1,21 @@
+// Import Bulma's core
+@import "./functions";
+@import "./variables";
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+// @import "~buefy/src/scss/buefy";
+
+@import "./elements/_all";
+
+$fa-font-path: "~font-awesome/fonts/";
+@import "~font-awesome/scss/font-awesome";
+
+@import "animate";
+
+html {
+  font-size: 16px;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+@import "style";

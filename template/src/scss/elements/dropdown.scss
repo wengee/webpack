@@ -1,0 +1,15 @@
+.dropdown-content {
+  padding: 3px 0;
+}
+
+.popper-dropdown {
+  border-radius: 3px;
+
+  .menu-list a i {
+    margin-right: 5px;
+  }
+}
+
+.popper-dropdown[x-placement^="bottom"] {
+  margin-top: 5px;
+}

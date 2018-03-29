@@ -1,0 +1,61 @@
+.dialog {
+  animation-duration: $speed-slow;
+
+  .modal-card-body {
+    .custom-icon {
+      margin-left: -8px;
+      margin-right: 16px;
+
+      .fa {
+        font-size: 48px;
+
+        &.is-primary {
+          color: $primary;
+        }
+
+        &.is-info {
+          color: $info;
+        }
+
+        &.is-warning {
+          color: $warning;
+        }
+
+        &.is-success {
+          color: $success;
+        }
+
+        &.is-danger {
+          color: $danger;
+        }
+      }
+    }
+
+    .control {
+      margin-top: 16px;
+    }
+
+    &.is-titleless {
+      border-top-left-radius: $radius-large;
+      border-top-right-radius: $radius-large;
+    }
+  }
+
+  .modal-card {
+    min-width: 360px;
+    max-width: 520px;
+    width: auto;
+    animation-duration: $speed-slow;
+    will-change: transform;
+  }
+
+  .modal-card-title {
+    font-size: $size-5;
+    font-weight: $weight-semibold;
+  }
+
+  .modal-card-foot {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
