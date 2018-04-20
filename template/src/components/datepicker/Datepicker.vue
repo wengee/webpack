@@ -1,7 +1,7 @@
 <template lang="pug">
   .datepicker
     .input-wrapper(@mouseenter="showCancel = true" @mouseleave="showCancel = false")
-      .input(@click="toggleCalendar" v-text="formatedValue ? formatedValue : placeholder" :class="{ 'is-placeholder': !formatedValue }")
+      .input(:class="{ 'is-placeholder': !formatedValue }" @click="toggleCalendar" v-text="formatedValue ? formatedValue : placeholder")
       transition(name="fade")
         span.cancel-btn(v-show="showCancel" @click="clear") &times;
     transition(name="toggle")
@@ -11,7 +11,7 @@
             a.level-item.preview-btn(href="#" @click.prevent="changePage('prev')")
               app-icon(icon="chevron-left")
 
-          span.level-item.is-1(v-show="panelType === 'year'") {{ tmpYear }} - {{ tmpYear + 11 }}
+          span.level-item.is-1(v-show="panelType === 'year'") {{ tmpYear }} - {{ tmpYear2 }}
 
           a.level-item.is-1.change-btn(href="#" v-show="panelType !== 'year'" @click.prevent="togglePanel('year')") {{ tmpYear }}
           a.level-item.is-1.change-btn(href="#" v-show="panelType !== 'year'" @click.prevent="togglePanel('month')") {{ tmpMonth | month(language) }}
@@ -23,7 +23,7 @@
         .calendar-bd.type-date(v-show="panelType === 'date'")
           .is-clearfix
             span.is-pulled-left.has-text-centered(v-for="weekday in weekList") {{ weekday | week(language) }}
-            a.is-pulled-left.has-text-centered(v-for="d in dateList" :class="{ 'is-prev': d.previousMonth, 'is-next': d.nextMonth, 'is-active': isCurrentDate(d.item), 'is-today': isToday(d.item) }" @click.prevent="selectDate(d.item)") {{ d.value }}
+            a.is-pulled-left.has-text-centered(:class="{ 'is-prev': d.previousMonth, 'is-next': d.nextMonth, 'is-active': isCurrentDate(d.item), 'is-today': isToday(d.item) }" v-for="d in dateList" @click.prevent="selectDate(d.item)") {{ d.value }}
 
         .calendar-hd.type-month(v-show="panelType === 'month'")
           .is-clearfix
@@ -77,6 +77,10 @@ export default {
   },
 
   computed: {
+    tmpYear2 () {
+      return this.tmpYear + 11
+    },
+
     formatedValue () {
       if (!this.value) {
         return null
